@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/coinbase/coinbase-commerce-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/coinbase/coinbase-commerce-ruby/tree/master)
+[![CircleCI](https://circleci.com/gh/coinbase/coinbase-commerce-ruby.svg?style=svg)](https://circleci.com/gh/coinbase/coinbase-commerce-ruby)
 
 # coinbase-commerce-ruby
 Coinbase Commerce Ruby Gem
