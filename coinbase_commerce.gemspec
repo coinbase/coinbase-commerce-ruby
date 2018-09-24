@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = CoinbaseCommerce::VERSION
   gem.license       = "MIT"
   gem.required_ruby_version = ">= 2.0.0"
-  gem.authors       = ["Alexander Dobrzhansky",]
+  gem.authors       = ["Coinbase Commerce",]
 
   gem.description   = "Client library for Coinbase Commerce API"
   gem.summary       = "Client library for Coinbase Commerce API"
