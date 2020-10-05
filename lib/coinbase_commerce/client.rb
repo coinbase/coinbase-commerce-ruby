@@ -104,7 +104,7 @@ module CoinbaseCommerce
         resp = yield
       rescue StandardError => e
         case e
-        when Faraday::ClientError
+        when Faraday::ClientError, Faraday::ServerError
           if e.response
             Errors.handle_error_response(e.response)
           else
