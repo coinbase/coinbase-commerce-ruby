@@ -1,6 +1,8 @@
 [![CircleCI](https://circleci.com/gh/coinbase/coinbase-commerce-ruby.svg?style=svg)](https://circleci.com/gh/coinbase/coinbase-commerce-ruby)
 
 # coinbase-commerce-ruby
+**Note: This repository is not actively maintained.**
+
 Coinbase Commerce Ruby Gem
 
 # Table of contents
