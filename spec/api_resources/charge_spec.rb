@@ -16,4 +16,15 @@ describe CoinbaseCommerce::APIResources::Charge do
         .with(query: {limit: 5}).to_return(body: JSON.generate(data: [mock_list]))
     @client.charge.list(limit: 5)
   end
+
+  it 'resolves a charge' do
+    stub_request(:post, "#{@api_base}#{CoinbaseCommerce::APIResources::Charge::RESOURCE_PATH}")
+        .with(body: {:id => "id_value", :key => "key_value"})
+        .to_return(body: {data: {id: "id_value", key: "key_value"}}.to_json)
+    charge = @client.charge.create(id: "id_value", key: "key_value")
+    stub_request(:post, "#{@api_base}#{CoinbaseCommerce::APIResources::Charge::RESOURCE_PATH}/id_value/resolve")
+        .with(body: {:id => "id_value", :key => "key_value"})
+        .to_return(body: {data: {id: "id_value", key: "key_value"}}.to_json)
+    charge.resolve
+  end
 end
