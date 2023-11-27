@@ -9,6 +9,14 @@ module CoinbaseCommerce
       # class constants
       OBJECT_NAME = "charge".freeze
       RESOURCE_PATH = "charges".freeze
+
+      def resolve
+        values = serialize_params(self)
+        values.delete(:id)
+        resp = @client.request(:post, "#{self.class::RESOURCE_PATH}/#{self[:id]}/resolve", self)
+        initialize_from(resp.data)
+        self
+      end
     end
   end
 end
