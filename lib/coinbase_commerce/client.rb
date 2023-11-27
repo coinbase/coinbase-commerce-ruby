@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'faraday/multipart'
+
 module CoinbaseCommerce
   BASE_API_URL = "https://api.commerce.coinbase.com/"
   API_VERSION = "2018-03-22"
@@ -17,9 +19,9 @@ module CoinbaseCommerce
       @api_ver = options[:api_ver] || API_VERSION
       # create client obj
       @conn = Faraday.new do |c|
-        c.use Faraday::Request::Multipart
-        c.use Faraday::Request::UrlEncoded
-        c.use Faraday::Response::RaiseError
+        c.request :multipart
+        c.request :url_encoded
+        c.response :raise_error
         c.adapter Faraday.default_adapter
       end
     end
